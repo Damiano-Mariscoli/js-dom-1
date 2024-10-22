@@ -26,8 +26,12 @@ const secondButton = document.getElementById('second-button')
 
 secondButton.addEventListener('click' ,  function(){
     console.log('ho cliccato sul secondo bottone')
+
     if(lamp.src.includes('white_lamp')){
         console.log('debug')
         lamp.src = "./img/yellow_lamp.png"
+    }else {
+        console.log('debug2')
+        lamp.src = "./img/white_lamp.png"
     }
 })
