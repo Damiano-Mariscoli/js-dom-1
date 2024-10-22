@@ -16,10 +16,9 @@ button.addEventListener('click',  function(){
     lampOn.classList.toggle('on-off');
 
     if (lampOn.classList.contains('on-off')) {
-        
         button.innerText = 'Accendi'
     } else {
-
+        
         button.innerText = 'Spegni'
     }
     
@@ -36,15 +35,29 @@ button.addEventListener('click',  function(){
 const lamp = document.getElementById('lamp')
 const secondButton = document.getElementById('second-button')
 
-secondButton.innerText = 'Accendi'
+
+
+
+let lampStatus = true; 
+secondButton.innerText = (lampStatus === false) ? 'Accendi' : 'Spegni';
+lamp.src = (lampStatus === true) ? "./img/yellow_lamp.png" : "./img/white_lamp.png";
+
 secondButton.addEventListener('click' ,  function(){
+
     console.log('ho cliccato sul secondo bottone')
 
-    if(lamp.src.includes('white_lamp')){
-        
-        lamp.src = "./img/yellow_lamp.png"
-    }else {
-        
-        lamp.src = "./img/white_lamp.png"
+    console.log(lampStatus)
+    if (lampStatus === false) {
+        lampStatus = true;
+        secondButton.innerText = 'Spegni';
+        lamp.src = "./img/yellow_lamp.png";
+
+    } else {
+        lampStatus = false;
+        secondButton.innerText = 'Accendi';
+        lamp.src = "./img/white_lamp.png";
+
     }
+    console.log(lampStatus)
 })
+
