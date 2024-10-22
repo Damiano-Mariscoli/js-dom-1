@@ -31,12 +31,8 @@ button.addEventListener('click',  function(){
 //allora cambia la src di lampOff con quella di "yello_lamp"
 //altrimenti inserisci la src di "white_lamp"
 
-
 const lamp = document.getElementById('lamp')
 const secondButton = document.getElementById('second-button')
-
-
-
 
 let lampStatus = true; 
 secondButton.innerText = (lampStatus === false) ? 'Accendi' : 'Spegni';
