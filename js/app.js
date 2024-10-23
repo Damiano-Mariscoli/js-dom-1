@@ -31,28 +31,31 @@ button.addEventListener('click',  function(){
 //allora cambia la src di lampOff con quella di "yello_lamp"
 //altrimenti inserisci la src di "white_lamp"
 
-const lamp = document.getElementById('lamp')
-const secondButton = document.getElementById('second-button')
+const lamp = document.getElementById('lamp');
+const secondButton = document.getElementById('second-button');
+const lampWhite = "./img/yellow_lamp.png";
+const lampYellow = "./img/white_lamp.png";
+const on = 'Accendi';
+const off = 'Spegni'
 
 let lampStatus = true; 
-secondButton.innerText = (lampStatus === false) ? 'Accendi' : 'Spegni';
-lamp.src = (lampStatus === true) ? "./img/yellow_lamp.png" : "./img/white_lamp.png";
+secondButton.innerText = !lampStatus ? on : off;
+lamp.src = lampStatus ? lampWhite : lampYellow;
+
 
 secondButton.addEventListener('click' ,  function(){
-
+    
     console.log('ho cliccato sul secondo bottone')
 
     console.log(lampStatus)
+    lampStatus  =! lampStatus
+    
     if (lampStatus === false) {
-        lampStatus = true;
-        secondButton.innerText = 'Spegni';
-        lamp.src = "./img/yellow_lamp.png";
-
+        secondButton.innerText = on;
+        lamp.src = lampYellow;
     } else {
-        lampStatus = false;
-        secondButton.innerText = 'Accendi';
-        lamp.src = "./img/white_lamp.png";
-
+        secondButton.innerText = off;
+        lamp.src = lampWhite;
     }
     console.log(lampStatus)
 })
